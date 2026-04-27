@@ -10,10 +10,14 @@ const titles = {
   "/reports": "Reports",
 };
 
-export default function Navbar() {
+export default function Navbar({ user }) {
   const location = useLocation();
   const title = titles[location.pathname] || "Library";
-  const today = new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" });
+  const today = new Date().toLocaleDateString("en-IN", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
 
   return (
     <div className="h-16 bg-[#0d0f14]/80 backdrop-blur-sm border-b border-white/5 px-8 flex items-center justify-between sticky top-0 z-10">
