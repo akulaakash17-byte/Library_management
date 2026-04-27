@@ -13,13 +13,11 @@ import Reports from "./pages/Reports";
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ display: "flex" }}>
+      <div className="flex min-h-screen bg-[#0a0c11]">
         <Sidebar />
-
-        <div style={{ flex: 1 }}>
+        <div className="flex-1 flex flex-col min-h-screen overflow-hidden">
           <Navbar />
-
-          <div style={{ padding: "20px" }}>
+          <main className="flex-1 overflow-auto">
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/books" element={<Books />} />
@@ -29,7 +27,7 @@ function App() {
               <Route path="/fines" element={<Fines />} />
               <Route path="/reports" element={<Reports />} />
             </Routes>
-          </div>
+          </main>
         </div>
       </div>
     </BrowserRouter>
